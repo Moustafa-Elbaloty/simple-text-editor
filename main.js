@@ -16,6 +16,9 @@ if (localStorage.getItem(list.id)) {
 if (localStorage.getItem("style")) {
     text.style.fontWeight = localStorage.getItem("style")
 }
+if (localStorage.getItem(list.id)) {
+    text.style.fontFamily = localStorage.getItem(list.id)
+}
 list.addEventListener("change", () => {
     text.style.fontFamily = list.value
     localStorage.setItem(list.id, list.value)
