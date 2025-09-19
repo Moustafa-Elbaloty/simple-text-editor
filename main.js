@@ -6,19 +6,20 @@ let bold = document.querySelector(".type")
 let incBtn = document.querySelector(".Increment")
 let decBtn = document.querySelector(".Decrement")
 
+
+if (localStorage.getItem(list.id)) {
+    list.value = localStorage.getItem(list.id)
+    text.style.fontFamily = list.value
+}
 if (localStorage.getItem("size")) {
     size.textContent = localStorage.getItem("size")
     text.style.fontSize = size.textContent + "px"
 }
-if (localStorage.getItem(list.id)) {
-    list.value = localStorage.getItem(list.id)
-}
+
 if (localStorage.getItem("style")) {
     text.style.fontWeight = localStorage.getItem("style")
 }
-if (localStorage.getItem(list.id)) {
-    text.style.fontFamily = localStorage.getItem(list.id)
-}
+
 list.addEventListener("change", () => {
     text.style.fontFamily = list.value
     localStorage.setItem(list.id, list.value)
